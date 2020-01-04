@@ -11,6 +11,15 @@ If you have any questions and/or want to extend the code-base and/or run your ow
 
 ## Requirements
 
+- Clone the repo using git
+- [Recommended] [Use virtualenv](https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-virtualenv-with-Python-2)
+- Use `venv` and install 
+  - `pip install tensorflow==1.4`
+  - `pip install future`
+- For running analysis you'll need to install 
+  - `pip install spicy`
+  - `pip install matplotlib`
+
 Python 2.7+, TensorFlow 1.4+, Pandas
 
 [NB:  the code should be compatible with Python 3, but has not been tested with it.]
