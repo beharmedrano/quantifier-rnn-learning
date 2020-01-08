@@ -396,6 +396,19 @@ def experiment_three_b(write_dir='data/exp3b'):
     for idx in range(num_trials):
         run_trial(eparams, hparams, idx, write_dir)
 
+def experiment_run_at_least_to_at_least_or_most(write_dir='data/exp3b', atl=0, atl2=1, atm=2):
+
+    eparams = {'num_epochs': 4, 'batch_size': 8,
+               'generator_mode': 'g', 'num_data': 100000,
+               'eval_steps': 50, 'stop_loss': 0.02}
+    hparams = {'hidden_size': 12, 'num_layers': 2, 'max_len': 20,
+               'num_classes': 2, 'dropout': 1.0,
+               'quantifiers': [quantifiers.at_least_n(atl),
+                               quantifiers.at_least_n_or_at_most_m(atl2, atm)]}
+    num_trials = 30
+
+    for idx in range(num_trials):
+        run_trial(eparams, hparams, idx, write_dir)
 
 # TEST
 def test():

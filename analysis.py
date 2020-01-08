@@ -64,7 +64,7 @@ def experiment_analysis(path, quants, trials=list(range(30)), plots=True,
             [means[1] for means in final_means]))
 
 
-def experiment_one_a_analysis(filename=None, size=None):
+def experiment_one_a_analysis(filename='data/Fart', size=None):
     experiment_analysis('data/exp1a',
                         ['at_least_4', 'at_least_6_or_at_most_2'],
                         filename=filename, size=size)
@@ -100,6 +100,12 @@ def experiment_three_b_analysis(filename=None, size=None):
                         ['most', 'M'],
                         filename=filename, size=size)
 
+def analysis_on_dir(dirName=None, atl=0, atl2=0, atm=0, filename=None, size=None):
+    atlKey = 'at_least_{atl}'.format(atl=atl)
+    atl2AtmKey = 'at_least_{atl2}_or_at_most_{atm}'.format(atl2=atl2, atm=atm)
+    experiment_analysis(dirName,
+                        [atlKey, atl2AtmKey],
+                        filename=filename, size=size)
 
 def remove_bad_trials(data, quants, threshold=0.97):
     """Remove 'bad' trials from a data set.  A trial is bad if it's not
