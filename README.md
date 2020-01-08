@@ -9,6 +9,16 @@ This repository contains all the code needed to replicate the experiments report
 
 If you have any questions and/or want to extend the code-base and/or run your own experiments, feel free to get in touch!
 
+## Publishing to AWS
+
+- Learn how to SSH to amazon instance (Google)
+- Learn how to install git and python 2.7 on ubuntu (while SSH connected to the machine)
+- Run on machine: 
+  - `git clone git@github.com:NitayRabi/quantifier-rnn-learning.git` (copy this from git)
+  - `cd quantifier-rnn-learning` (get into working folder)
+  - `pip install -r requirements.txt` (install all stuff needed to run on machine)
+  - `python run_iter.py --start=X --end=Y` (remember Y is not inclusive) - this is the command to run. you need to Google how to run this in the background (without you needing to be connected to the machine)
+
 ## Requirements
 
 - Use Python 2.7 (Not tested with 3)
