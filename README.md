@@ -11,16 +11,23 @@ If you have any questions and/or want to extend the code-base and/or run your ow
 
 ## Requirements
 
+- Use Python 2.7 (Not tested with 3)
 - Clone the repo using git
 - [Recommended] [Use virtualenv](https://help.dreamhost.com/hc/en-us/articles/215489338-Installing-and-using-virtualenv-with-Python-2)
-- Use `venv` and install 
-  - `pip install tensorflow==1.4`
-  - `pip install future`
-- For running analysis you'll need to install 
-  - `pip install spicy`
-  - `pip install matplotlib`
+- Use `venv`
+- Install using `pip install -r requirements.txt`
 
-Python 2.7+, TensorFlow 1.4+, Pandas
+## Known issues 
+
+If you have issues with venv and analysis - change analysis to 
+
+```python
+...
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as plt
+...
+```
 
 [NB:  the code should be compatible with Python 3, but has not been tested with it.]
 
